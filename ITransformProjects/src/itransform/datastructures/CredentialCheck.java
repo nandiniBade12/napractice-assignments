@@ -7,7 +7,7 @@ public class CredentialCheck {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		int count=0;
+		int count=1;
 		while(count>0) {
 		
 			System.out.println("Enter Login name: ");
@@ -19,13 +19,11 @@ public class CredentialCheck {
 				if((name.matches("^[a-zA-Z]*$") && password.length()<=8)){
 					System.out.println("Welcome " + name);
 					System.exit(0);
-				} else {
-					System.out.println("Enter valid login details..");
-				}
-				
-				if(count==3) {
+				} else if(count==3) {
 					System.out.println("Contact Admin");
 					System.exit(0);
+				} else {
+					System.out.println("Enter valid login details..");
 				}
 				count++;
 		}
